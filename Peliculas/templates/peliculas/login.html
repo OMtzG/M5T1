@@ -1,0 +1,14 @@
+{% extends 'peliculas/base.html' %}
+
+{% block title %}Login - Peliculas{% endblock %}
+
+{% block content %}
+    <h1>Iniciar sesión</h1>
+    <p>Por favor, introduce tus credenciales para iniciar sesión.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Iniciar sesión</button>
+    </form>
+{% endblock %}

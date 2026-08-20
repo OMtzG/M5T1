@@ -1,0 +1,14 @@
+{% extends 'peliculas/base.html' %}
+
+{% block title %}Registro - Peliculas{% endblock %}
+
+{% block content %}
+    <h1>Crear cuenta </h1>
+    <p>Django ya tiene un sistema de registro integrado.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
+{% endblock %}

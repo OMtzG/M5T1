@@ -117,6 +117,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+LOGIN_URL = 'Peliculas:login'
+LOGIN_REDIRECT_URL = 'Peliculas:home'
+LOGOUT_REDIRECT_URL = 'Peliculas:home'
+
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
