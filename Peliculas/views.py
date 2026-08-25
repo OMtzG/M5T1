@@ -12,4 +12,4 @@ def signup(request):
             return redirect('Peliculas:login')
     else:
         form = UserCreationForm()
-    return render(request, 'Peliculas/signup.html', {'form': form})
+    return render(request, 'Peliculas/signup.html', {'form': form})d
