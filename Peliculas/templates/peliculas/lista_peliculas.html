@@ -1,0 +1,59 @@
+{% extends 'peliculas/base.html' %}
+
+{% block title %}Catálogo - Peliculas{% endblock %}
+
+{% block content %}
+    <h1>Catálogo de películas</h1>
+
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'Peliculas:agregar_pelicula' %}">Añadir película</a></p>
+    {% endif %}
+
+    <form method="get">
+        <input type="text" name="q" value="{{ query }}" placeholder="Buscar por título o sinopsis">
+        <select name="genero">
+            <option value="">Todos los géneros</option>
+            {% for valor, etiqueta in generos %}
+                <option value="{{ valor }}" {% if valor == genero_seleccionado %}selected{% endif %}>{{ etiqueta }}</option>
+            {% endfor %}
+        </select>
+        <select name="order">
+            <option value="">Sin ordenar</option>
+            <option value="titulo" {% if order == 'titulo' %}selected{% endif %}>Título</option>
+            <option value="anio" {% if order == 'anio' %}selected{% endif %}>Año</option>
+            <option value="calificacion" {% if order == 'calificacion' %}selected{% endif %}>Calificación</option>
+        </select>
+        <select name="dir">
+            <option value="asc" {% if dir == 'asc' %}selected{% endif %}>Ascendente</option>
+            <option value="desc" {% if dir == 'desc' %}selected{% endif %}>Descendente</option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+
+    {% if peliculas %}
+        <ul>
+            {% for pelicula in peliculas %}
+                <li>
+                    <a href="{% url 'Peliculas:detalle_pelicula' pelicula.pk %}">{{ pelicula.titulo }}</a>
+                    ({{ pelicula.anio_estreno }}) - {{ pelicula.get_genero_display }}
+                    - Nota: {{ pelicula.calificacion }}
+                    {% if not pelicula.disponible %}<em>(No disponible)</em>{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="paginacion">
+            {% if page_obj.has_previous %}
+                <a href="?{% if querystring %}{{ querystring }}&{% endif %}page=1">Primera</a>
+                <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.previous_page_number }}">Anterior</a>
+            {% endif %}
+            <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+            {% if page_obj.has_next %}
+                <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.next_page_number }}">Siguiente</a>
+                <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.paginator.num_pages }}">Última</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No se encontraron películas con esos criterios.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,137 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1000,
+    "fields": {
+      "password": "!",
+      "is_superuser": false,
+      "username": "datos_ejemplo",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 1,
+    "fields": {
+      "titulo": "Matrix",
+      "genero": "CIENCIA_FICCION",
+      "anio_estreno": 1999,
+      "duracion_minutos": 136,
+      "sinopsis": "Un programador descubre que la realidad es una simulación controlada por máquinas.",
+      "calificacion": "8.7",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 2,
+    "fields": {
+      "titulo": "El padrino",
+      "genero": "DRAMA",
+      "anio_estreno": 1972,
+      "duracion_minutos": 175,
+      "sinopsis": "La historia de la familia Corleone y su imperio criminal.",
+      "calificacion": "9.2",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 3,
+    "fields": {
+      "titulo": "El resplandor",
+      "genero": "TERROR",
+      "anio_estreno": 1980,
+      "duracion_minutos": 146,
+      "sinopsis": "Un escritor se vuelve loco mientras cuida un hotel aislado en invierno.",
+      "calificacion": "8.4",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 4,
+    "fields": {
+      "titulo": "Toy Story",
+      "genero": "ANIMACION",
+      "anio_estreno": 1995,
+      "duracion_minutos": 81,
+      "sinopsis": "Los juguetes de un niño cobran vida cuando nadie los observa.",
+      "calificacion": "8.3",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 5,
+    "fields": {
+      "titulo": "Superbad",
+      "genero": "COMEDIA",
+      "anio_estreno": 2007,
+      "duracion_minutos": 113,
+      "sinopsis": "Dos amigos intentan comprar alcohol para una fiesta antes de graduarse.",
+      "calificacion": "7.6",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 6,
+    "fields": {
+      "titulo": "Duro de matar",
+      "genero": "ACCION",
+      "anio_estreno": 1988,
+      "duracion_minutos": 132,
+      "sinopsis": "Un policía se enfrenta a un grupo de terroristas en un rascacielos de Los Ángeles.",
+      "calificacion": "8.2",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 7,
+    "fields": {
+      "titulo": "Interstellar",
+      "genero": "CIENCIA_FICCION",
+      "anio_estreno": 2014,
+      "duracion_minutos": 169,
+      "sinopsis": "Un grupo de astronautas busca un nuevo hogar para la humanidad a través de un agujero de gusano.",
+      "calificacion": "8.9",
+      "disponible": true,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "Peliculas.pelicula",
+    "pk": 8,
+    "fields": {
+      "titulo": "Amelie",
+      "genero": "COMEDIA",
+      "anio_estreno": 2001,
+      "duracion_minutos": 122,
+      "sinopsis": "Una joven parisina decide cambiar la vida de quienes la rodean con pequeños actos anónimos.",
+      "calificacion": "8.3",
+      "disponible": false,
+      "creado_por": 1000,
+      "fecha_creacion": "2026-01-01T00:00:00Z"
+    }
+  }
+]
