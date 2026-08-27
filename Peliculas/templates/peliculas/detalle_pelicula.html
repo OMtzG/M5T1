@@ -17,6 +17,7 @@
     <p><small>Añadida por {{ pelicula.creado_por }} el {{ pelicula.fecha_creacion }}</small></p>
 
     {% if user.is_authenticated %}
+        <p><a href="{% url 'Peliculas:editar_pelicula' pelicula.pk %}">Editar</a></p>
         <form method="post" action="{% url 'Peliculas:eliminar_pelicula' pelicula.pk %}">
             {% csrf_token %}
             <button type="submit">Eliminar</button>

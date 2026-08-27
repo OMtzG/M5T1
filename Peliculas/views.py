@@ -89,6 +89,19 @@ def agregar_pelicula(request):
 
 
 @login_required
+def editar_pelicula(request, pk):
+    pelicula = get_object_or_404(Pelicula, pk=pk)
+    if request.method == 'POST':
+        form = PeliculaForm(request.POST, instance=pelicula)
+        if form.is_valid():
+            form.save()
+            return redirect('Peliculas:detalle_pelicula', pk=pelicula.pk)
+    else:
+        form = PeliculaForm(instance=pelicula)
+    return render(request, 'peliculas/editar_pelicula.html', {'form': form, 'pelicula': pelicula})
+
+
+@login_required
 def eliminar_pelicula(request, pk):
     pelicula = get_object_or_404(Pelicula, pk=pk)
     if request.method == 'POST':

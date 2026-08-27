@@ -1,0 +1,14 @@
+{% extends 'peliculas/base.html' %}
+
+{% block title %}Editar {{ pelicula.titulo }} - Peliculas{% endblock %}
+
+{% block content %}
+    <h1>Editar película</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <p><a href="{% url 'Peliculas:detalle_pelicula' pelicula.pk %}">Cancelar</a></p>
+{% endblock %}
